@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package common.ping;
+
+message Ping {
+  int64 timestamp = 1;
+}
