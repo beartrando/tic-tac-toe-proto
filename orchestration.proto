@@ -1,23 +1,26 @@
 syntax = "proto3";
 
-import "common/health.proto";
-import "common/empty.proto";
-import "profile.proto";
-import "auth.proto";
-
 package orchestration;
 
 service Orchestration {
-  rpc Health (common.empty.Empty) returns (common.health.HealthReport);
-  rpc Status (common.empty.Empty) returns (common.health.StatusInfo);
-  rpc Livez (common.empty.Empty) returns (common.health.LiveStatus);
-  rpc Readyz (common.empty.Empty) returns (common.health.ReadyStatus);
+  rpc Proxy(ProxyRequest) returns (ProxyResponse);
+}
 
-  rpc GetMyUser (common.empty.Empty) returns (auth.UserObject);
-  rpc AnonymousSignIn (auth.AnonymousSignInRequest) returns (auth.AuthObject);
-  rpc RefreshTokens (auth.RefreshTokensRequest) returns (auth.AuthObject);
+message Header {
+  string key = 1;
+  string value = 2;
+}
 
+message ProxyRequest {
+  string method = 1;
+  string path = 2;
+  repeated Header headers = 3;
+  repeated Header queryParams = 4;
+  bytes body = 5;
+}
 
-  rpc GetMyProfile (common.empty.Empty) returns (profile.ProfileObject);
-  rpc GetProfile (profile.ProfileIdRequest) returns (profile.ProfileObject);
+message ProxyResponse {
+  int32 status = 1;
+  repeated Header headers = 2;
+  bytes body = 3;
 }
