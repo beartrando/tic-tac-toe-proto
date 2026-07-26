@@ -1,9 +1,9 @@
 syntax = "proto3";
 
+package auth;
+
 import "google/protobuf/timestamp.proto";
 import "common/empty.proto";
-
-package auth;
 
 service Auth {
   rpc Register (RegisterRequest) returns (AuthObject);

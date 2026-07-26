@@ -1,10 +1,10 @@
 syntax = "proto3";
 
+package profile;
+
 import "google/protobuf/timestamp.proto";
 import "common/empty.proto";
 import "auth.proto";
-
-package profile;
 
 service Profile {
   rpc GetMe (common.empty.Empty) returns (ProfileObject);

@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-import "common/key_value.proto";
-
 package orchestration;
+
+import "common/key_value.proto";
 
 service Orchestration {
   rpc Proxy(ProxyRequest) returns (ProxyResponse);

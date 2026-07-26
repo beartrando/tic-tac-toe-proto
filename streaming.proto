@@ -1,12 +1,12 @@
 syntax = "proto3";
 
+package streaming;
+
 import "common/empty.proto";
 import "common/error.proto";
 import "common/ping.proto";
 import "battle.proto";
 //import "ai.proto";
-
-package streaming;
 
 message BattleRequest {
   oneof event {

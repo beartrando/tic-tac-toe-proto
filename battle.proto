@@ -1,11 +1,11 @@
 syntax = "proto3";
 
+package battle;
+
 import "google/protobuf/timestamp.proto";
 import "auth.proto";
 import "profile.proto";
 //import "google/protobuf/timestamp.proto";
-
-package battle;
 
 service Battle {
   rpc GetActiveByUser (auth.UserIdRequest) returns (BattleObject);
