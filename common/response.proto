@@ -5,6 +5,9 @@ package common.response;
 import "common/error.proto";
 
 message EmptyResponse {
-  common.error.ErrorObject error = 1;
+  oneof output {
+    bool                     success = 1;
+    common.error.ErrorObject error   = 2;
+  }
 }
 

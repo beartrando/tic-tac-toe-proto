@@ -13,11 +13,11 @@ service Engine {
 
 message BattleRequest {
   oneof input {
-    battle.BattleStartRequest start      = 1;
-    BattleMove                move       = 2;
-    BattleLeave               leave      = 3;
-    BattleLeave               disconnect = 4;
-    common.ping.Ping          ping       = 5;
+    battle.BattleObject start      = 1;
+    BattleMove          move       = 2;
+    BattleLeave         leave      = 3;
+    BattleLeave         disconnect = 4;
+    common.ping.Ping    ping       = 5;
   }
 }
 

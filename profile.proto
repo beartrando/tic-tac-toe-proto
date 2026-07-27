@@ -19,8 +19,10 @@ message ProfileIdRequest {
 }
 
 message ProfileResponse {
-  ProfileObject            profile = 1;
-  common.error.ErrorObject error   = 2;
+  oneof output {
+    ProfileObject            profile = 1;
+    common.error.ErrorObject error   = 2;
+  }
 }
 
 message ProfileObject {

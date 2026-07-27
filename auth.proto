@@ -63,11 +63,15 @@ message AnonymousSignInRequest {
 }
 
 message AuthResponse {
-  AuthObject               auth  = 1;
-  common.error.ErrorObject error = 2;
+  oneof output {
+    AuthObject               auth  = 1;
+    common.error.ErrorObject error = 2;
+  }
 }
 
 message UserResponse {
-  UserObject               user  = 1;
-  common.error.ErrorObject error = 2;
+  oneof output {
+    UserObject               user  = 1;
+    common.error.ErrorObject error = 2;
+  }
 }

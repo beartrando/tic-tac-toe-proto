@@ -48,8 +48,10 @@ message BattleObject {
 }
 
 message BattleResponse {
-  BattleObject             battle = 1;
-  common.error.ErrorObject error  = 2;
+  oneof output {
+    BattleObject             battle = 1;
+    common.error.ErrorObject error  = 2;
+  }
 }
 
 
