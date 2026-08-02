@@ -7,10 +7,9 @@ import "profile.proto";
 import "common/error.proto";
 
 service Battle {
-  rpc GetActiveByProfile (profile.ProfileIdRequest) returns (BattleResponse);
+  rpc GetActiveByProfile (profile.ProfileIdRequest) returns (BattlesResponse);
   rpc Get (BattleIdRequest) returns (BattlesResponse);
-  rpc Create (profile.ProfileIdRequest) returns (BattleResponse);
-  rpc Join (BattleStartRequest) returns (BattleResponse);
+  rpc Start (BattleStartRequest) returns (BattleResponse);
 }
 
 message BattleIdRequest {
