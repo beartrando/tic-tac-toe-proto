@@ -36,7 +36,7 @@ enum BattleStatus {
 
 message BattleObject {
   string                    id           = 1;
-  repeated BattleCellValue  cells        = 2;
+  repeated BattleCellValue  board        = 2;
   repeated string           player_ids   = 3;
   BattleStatus              status       = 4;
   string                    winner_id    = 5;
