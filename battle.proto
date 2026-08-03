@@ -52,13 +52,13 @@ message BattleResponse {
   }
 }
 
-message Battles {
-  repeated BattleObject battles = 1;
+message BattleList {
+  repeated BattleObject items = 1;
 }
 
 message BattlesResponse {
   oneof output {
-    Battles                  battles = 1;
+    BattleList               battles = 1;
     common.error.ErrorObject error   = 2;
   }
 }
