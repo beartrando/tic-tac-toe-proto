@@ -7,8 +7,8 @@ import "profile.proto";
 import "common/error.proto";
 
 service Battle {
-  rpc GetActiveByProfile (profile.ProfileIdRequest) returns (BattlesResponse);
   rpc Get (BattleIdRequest) returns (BattlesResponse);
+  rpc GetActiveByProfile (profile.ProfileIdRequest) returns (BattlesResponse);
   rpc Start (BattleStartRequest) returns (BattleResponse);
 }
 
