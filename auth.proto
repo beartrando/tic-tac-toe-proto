@@ -12,7 +12,6 @@ service Auth {
   rpc RefreshTokens (RefreshTokensRequest) returns (AuthResponse);
   rpc AnonymousSignIn (AnonymousSignInRequest) returns (AuthResponse);
   rpc Get (UserIdRequest) returns (UserResponse);
-  rpc GetMe (common.empty.Empty) returns (UserResponse);
 }
 
 message UserObject {

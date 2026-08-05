@@ -8,7 +8,6 @@ import "auth.proto";
 import "common/error.proto";
 
 service Profile {
-  rpc GetMe (common.empty.Empty) returns (ProfileResponse);
   rpc GetByUser (auth.UserIdRequest) returns (ProfileResponse);
   rpc Get (ProfileIdRequest) returns (ProfileResponse);
   rpc GetOrCreate (common.empty.Empty) returns (ProfileResponse);
