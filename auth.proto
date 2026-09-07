@@ -8,7 +8,7 @@ import "common/error.proto";
 import "common/response.proto";
 
 service Auth {
-  rpc Logout (common.empty.Empty) returns (common.response.EmptyResponse);
+  rpc Logout (common.empty.Empty) returns (common.response.SuccessResponse);
   rpc RefreshTokens (RefreshTokensRequest) returns (AuthResponse);
   rpc AnonymousSignIn (AnonymousSignInRequest) returns (AuthResponse);
   rpc Get (UserIdRequest) returns (UserResponse);

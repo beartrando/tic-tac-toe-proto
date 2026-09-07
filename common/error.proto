@@ -22,7 +22,4 @@ enum ErrorCode {
   ENTITY_SPECIFIC     = 100;
 }
 
-message EmptyResponse {
-  ErrorObject error = 1;
-}
 

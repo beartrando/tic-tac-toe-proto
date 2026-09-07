@@ -4,7 +4,7 @@ package common.response;
 
 import "common/error.proto";
 
-message EmptyResponse {
+message SuccessResponse {
   oneof output {
     bool                     success = 1;
     common.error.ErrorObject error   = 2;
