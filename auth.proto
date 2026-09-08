@@ -15,13 +15,13 @@ service Auth {
 }
 
 message UserObject {
-  string                    id             = 1;
-  string                    email          = 2;
-  string                    google_id      = 3;
-  google.protobuf.Timestamp last_login_at  = 4;
+  string                    id = 1;
+  string                    email = 2;
+  string                    google_id = 3;
+  google.protobuf.Timestamp last_login_at = 4;
   google.protobuf.Timestamp last_active_at = 5;
-  google.protobuf.Timestamp created_at     = 6;
-  google.protobuf.Timestamp updated_at     = 7;
+  google.protobuf.Timestamp created_at = 6;
+  google.protobuf.Timestamp updated_at = 7;
 }
 
 message UserIdRequest {
@@ -29,7 +29,7 @@ message UserIdRequest {
 }
 
 message AuthObject {
-  string access_token  = 1;
+  string access_token = 1;
   string refresh_token = 2;
 }
 
@@ -43,14 +43,14 @@ message AnonymousSignInRequest {
 
 message AuthResponse {
   oneof output {
-    AuthObject               auth  = 1;
+    AuthObject               auth = 1;
     common.error.ErrorObject error = 2;
   }
 }
 
 message UserResponse {
   oneof output {
-    UserObject               user  = 1;
+    UserObject               user = 1;
     common.error.ErrorObject error = 2;
   }
 }

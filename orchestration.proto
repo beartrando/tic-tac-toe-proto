@@ -9,15 +9,15 @@ service Orchestration {
 }
 
 message ProxyRequest {
-  string                             method       = 1;
-  string                             path         = 2;
-  repeated common.key_value.KeyValue headers      = 3;
+  string                             method = 1;
+  string                             path = 2;
+  repeated common.key_value.KeyValue headers = 3;
   repeated common.key_value.KeyValue query_params = 4;
-  bytes                              body         = 5;
+  bytes                              body = 5;
 }
 
 message ProxyResponse {
   int32                              status_code = 1;
-  repeated common.key_value.KeyValue headers     = 2;
-  bytes                              body        = 3;
+  repeated common.key_value.KeyValue headers = 2;
+  bytes                              body = 3;
 }

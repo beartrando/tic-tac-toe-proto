@@ -20,16 +20,16 @@ message ProfileIdRequest {
 message ProfileResponse {
   oneof output {
     ProfileObject            profile = 1;
-    common.error.ErrorObject error   = 2;
+    common.error.ErrorObject error = 2;
   }
 }
 
 message ProfileObject {
-  string                    id         = 1;
-  string                    user_id    = 2;
-  string                    nickname   = 3;
-  int32                     level      = 4;
-  int32                     rating     = 5;
+  string                    id = 1;
+  string                    user_id = 2;
+  string                    nickname = 3;
+  int32                     level = 4;
+  int32                     rating = 5;
   int64                     experience = 6;
   google.protobuf.Timestamp created_at = 7;
   google.protobuf.Timestamp updated_at = 8;

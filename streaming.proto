@@ -9,10 +9,10 @@ import "battle.proto";
 
 message BattleRequest {
   oneof input {
-    BattleStart      start       = 1;
-    BattleMove       move        = 2;
-    common.ping.Ping ping        = 3;
-    BattleLeave      leave       = 4;
+    BattleStart      start = 1;
+    BattleMove       move = 2;
+    common.ping.Ping ping = 3;
+    BattleLeave      leave = 4;
     BattleJoinBot    connect_bot = 6;
   }
 }
@@ -20,8 +20,8 @@ message BattleRequest {
 message BattleResponse {
   oneof output {
     battle.BattleObject      battle = 1;
-    common.empty.Empty       ping   = 2;
-    common.error.ErrorObject error  = 3;
+    common.empty.Empty       ping = 2;
+    common.error.ErrorObject error = 3;
   }
 }
 
@@ -39,5 +39,5 @@ message BattleJoinBot {
 
 message BattleMove {
   string battle_id = 1;
-  int32  cell_idx  = 2;
+  int32  cell_idx = 2;
 }

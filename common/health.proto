@@ -14,24 +14,24 @@ service Health {
 }
 
 message HealthReport {
-  string                    service    = 1;
-  HealthStatus              status     = 2;
+  string                    service = 1;
+  HealthStatus              status = 2;
   map<string, HealthStatus> components = 3;
-  google.protobuf.Timestamp timestamp  = 4;
+  google.protobuf.Timestamp timestamp = 4;
 }
 
 enum HealthStatus {
   HEALTH_STATUS_UNSPECIFIED = 0;
-  HEALTH_STATUS_OK          = 1;
-  HEALTH_STATUS_FAIL        = 2;
+  HEALTH_STATUS_OK = 1;
+  HEALTH_STATUS_FAIL = 2;
 }
 
 message ServiceStatus {
-  string                    name      = 1;
-  string                    version   = 2;
-  string                    env       = 3;
+  string                    name = 1;
+  string                    version = 2;
+  string                    env = 3;
 
-  google.protobuf.Duration  uptime    = 4;
+  google.protobuf.Duration  uptime = 4;
   google.protobuf.Timestamp timestamp = 5;
 }
 
