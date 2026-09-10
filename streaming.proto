@@ -9,10 +9,11 @@ import "battle.proto";
 
 message BattleRequest {
   oneof input {
-    BattleStart      start = 1;
-    BattleMove       move = 2;
-    common.ping.Ping ping = 3;
-    BattleLeave      leave = 4;
+    BattleCreate     create = 1;
+    BattleStart      start = 2;
+    BattleMove       move = 3;
+    common.ping.Ping ping = 4;
+    BattleLeave      leave = 5;
     BattleJoinBot    connect_bot = 6;
   }
 }
@@ -26,6 +27,10 @@ message BattleResponse {
 }
 
 message BattleStart {
+  string battle_id = 1;
+}
+
+message BattleCreate {
   string battle_id = 1;
 }
 

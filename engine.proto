@@ -13,11 +13,12 @@ service Engine {
 
 message BattleRequest {
   oneof input {
-    battle.BattleObject start = 1;
-    BattleMove          move = 2;
-    BattleLeave         leave = 3;
-    BattleLeave         disconnect = 4;
-    common.ping.Ping    ping = 5;
+    battle.BattleObject create = 1;
+    BattleStart         start = 2;
+    BattleMove          move = 3;
+    BattleLeave         leave = 4;
+    BattleDisconnect    disconnect = 5;
+    common.ping.Ping    ping = 6;
   }
 }
 
@@ -36,6 +37,16 @@ message BattleMove {
 }
 
 message BattleLeave {
+  string battle_id = 1;
+  string profile_id = 2;
+}
+
+message BattleDisconnect {
+  string battle_id = 1;
+  string profile_id = 2;
+}
+
+message BattleStart {
   string battle_id = 1;
   string profile_id = 2;
 }

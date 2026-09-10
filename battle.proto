@@ -8,15 +8,21 @@ import "common/error.proto";
 
 service Battle {
   rpc Get (BattleIdRequest) returns (BattlesResponse);
-  rpc GetActiveByProfile (profile.ProfileIdRequest) returns (BattlesResponse);
-  rpc Start (BattleStartRequest) returns (BattleResponse);
+  rpc GetUnfinishedByProfile (profile.ProfileIdRequest) returns (BattlesResponse);
+  rpc Create (BattleCreateRequest) returns (BattleResponse);
+  rpc Leave (BattleLeaveRequest) returns (BattleResponse);
 }
 
 message BattleIdRequest {
   string battle_id = 1;
 }
 
-message BattleStartRequest {
+message BattleCreateRequest {
+  string battle_id = 1;
+  string profile_id = 2;
+}
+
+message BattleLeaveRequest {
   string battle_id = 1;
   string profile_id = 2;
 }
@@ -31,8 +37,9 @@ enum BattleStatus {
   UNKNOWN = 0;
   CREATED = 1;
   READY = 2;
-  ACTIVE = 3;
+  STARTED = 3;
   FINISHED = 4;
+  CANCELLED = 5;
 }
 
 message BattleObject {
