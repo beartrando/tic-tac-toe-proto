@@ -36,10 +36,11 @@ enum BattleCellValue {
 enum BattleStatus {
   UNKNOWN = 0;
   CREATED = 1;
-  READY = 2;
-  STARTED = 3;
-  FINISHED = 4;
-  CANCELLED = 5;
+  MATCHED = 2;
+  READY = 3;
+  STARTED = 4;
+  FINISHED = 5;
+  CANCELLED = 6;
 }
 
 message BattleObject {
