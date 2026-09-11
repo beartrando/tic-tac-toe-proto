@@ -9,7 +9,7 @@ import "battle.proto";
 
 message BattleRequest {
   oneof input {
-    BattleCreate     create = 1;
+    BattleInit       init = 1;
     BattleStart      start = 2;
     BattleMove       move = 3;
     common.ping.Ping ping = 4;
@@ -30,7 +30,7 @@ message BattleStart {
   string battle_id = 1;
 }
 
-message BattleCreate {
+message BattleInit {
   string battle_id = 1;
 }
 

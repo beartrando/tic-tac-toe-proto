@@ -9,7 +9,7 @@ import "common/error.proto";
 service Battle {
   rpc Get (BattleIdRequest) returns (BattlesResponse);
   rpc GetUnfinishedByProfile (profile.ProfileIdRequest) returns (BattlesResponse);
-  rpc Create (BattleCreateRequest) returns (BattleResponse);
+  rpc Init (BattleInitRequest) returns (BattleResponse);
   rpc Leave (BattleLeaveRequest) returns (BattleResponse);
 }
 
@@ -17,7 +17,7 @@ message BattleIdRequest {
   string battle_id = 1;
 }
 
-message BattleCreateRequest {
+message BattleInitRequest {
   string battle_id = 1;
   string profile_id = 2;
 }
