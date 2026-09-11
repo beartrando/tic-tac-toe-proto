@@ -8,7 +8,6 @@ import "common/error.proto";
 
 service Battle {
   rpc Get (BattleIdRequest) returns (BattlesResponse);
-  rpc GetUnfinishedByProfile (profile.ProfileIdRequest) returns (BattlesResponse);
   rpc Init (BattleInitRequest) returns (BattleResponse);
   rpc Leave (BattleLeaveRequest) returns (BattleResponse);
 }
