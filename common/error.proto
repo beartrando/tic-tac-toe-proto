@@ -4,7 +4,7 @@ package common.error;
 
 message ErrorObject {
   ErrorCode code = 1;
-  string    message = 2;
+  string    details = 2;
 }
 
 enum ErrorCode {
