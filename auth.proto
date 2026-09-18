@@ -9,8 +9,8 @@ import "common/response.proto";
 
 service Auth {
   rpc Logout (common.empty.Empty) returns (common.response.SuccessResponse);
-  rpc RefreshTokens (RefreshTokensRequest) returns (AuthResponse);
-  rpc AnonymousSignIn (AnonymousSignInRequest) returns (AuthResponse);
+  rpc RefreshTokens (RefreshTokensRequest) returns (SessionResponse);
+  rpc AnonymousSignIn (AnonymousSignInRequest) returns (SessionResponse);
   rpc Get (UserIdRequest) returns (UserResponse);
 }
 
@@ -28,7 +28,7 @@ message UserIdRequest {
   string user_id = 1;
 }
 
-message AuthObject {
+message SessionObject {
   string access_token = 1;
   string refresh_token = 2;
 }
@@ -41,9 +41,9 @@ message AnonymousSignInRequest {
   string device_id = 1;
 }
 
-message AuthResponse {
+message SessionResponse {
   oneof output {
-    AuthObject               auth = 1;
+    SessionObject            session = 1;
     common.error.ErrorObject error = 2;
   }
 }
