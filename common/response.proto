@@ -10,4 +10,3 @@ message SuccessResponse {
     common.error.ErrorObject error = 2;
   }
 }
-

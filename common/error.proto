@@ -19,5 +19,3 @@ enum ErrorCode {
   INVALID_AUTHORIZATION = 7;
   TOKEN_EXPIRED = 401;
 }
-
-
