@@ -8,12 +8,17 @@ import "common/error.proto";
 
 service Battle {
   rpc Get (BattleIdRequest) returns (BattlesResponse);
+  rpc GetMany (BattleIdsRequest) returns (BattlesResponse);
   rpc Init (BattleInitRequest) returns (BattleResponse);
   rpc Leave (BattleLeaveRequest) returns (BattleResponse);
 }
 
 message BattleIdRequest {
   string battle_id = 1;
+}
+
+message BattleIdsRequest {
+  repeated string battle_ids = 1;
 }
 
 message BattleInitRequest {
@@ -40,6 +45,7 @@ enum BattleStatus {
   STARTED = 4;
   FINISHED = 5;
   CANCELLED = 6;
+  TIMEOUT = 7;
 }
 
 message BattleObject {
