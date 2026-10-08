@@ -3,7 +3,6 @@ syntax = "proto3";
 package battle;
 
 import "google/protobuf/timestamp.proto";
-import "profile.proto";
 import "common/error.proto";
 
 service Battle {
