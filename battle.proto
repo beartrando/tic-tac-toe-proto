@@ -8,7 +8,6 @@ import "common/error.proto";
 service Battle {
   rpc Get (BattleIdRequest) returns (BattlesResponse);
   rpc GetMany (BattleIdsRequest) returns (BattlesResponse);
-  rpc Init (BattleInitRequest) returns (BattleResponse);
   rpc Leave (BattleLeaveRequest) returns (BattleResponse);
 }
 
@@ -18,11 +17,6 @@ message BattleIdRequest {
 
 message BattleIdsRequest {
   repeated string battle_ids = 1;
-}
-
-message BattleInitRequest {
-  string battle_id = 1;
-  string profile_id = 2;
 }
 
 message BattleLeaveRequest {

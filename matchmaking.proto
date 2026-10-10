@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package matchmaking;
+
+import "google/protobuf/timestamp.proto";
+import "common/error.proto";
+
+service Matchmaking {
+  rpc Init (BattleInitRequest) returns (BattleResponse);
+}
+
+message BattleInitRequest {
+  string battle_id = 1;
+  string profile_id = 2;
+}
+
+enum BattleCellValue {
+  CELL_EMPTY = 0;
+  CELL_X = 1;
+  CELL_O = 2;
+}
+
+enum BattleStatus {
+  UNKNOWN = 0;
+  CREATED = 1;
+  MATCHED = 2;
+  READY = 3;
+  STARTED = 4;
+  FINISHED = 5;
+  CANCELLED = 6;
+  TIMEOUT = 7;
+}
+
+message BattleObject {
+  string                    id = 1;
+  repeated BattleCellValue  board = 2;
+  repeated string           player_ids = 3;
+  BattleStatus              status = 4;
+  string                    winner_id = 5;
+  google.protobuf.Timestamp last_move_at = 6;
+  google.protobuf.Timestamp created_at = 7;
+  google.protobuf.Timestamp updated_at = 8;
+}
+
+message BattleResponse {
+  oneof output {
+    BattleObject             battle = 1;
+    common.error.ErrorObject error = 2;
+  }
+}
