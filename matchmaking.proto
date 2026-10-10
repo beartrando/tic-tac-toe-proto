@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package matchmaking;
+
+import "google/protobuf/timestamp.proto";
+import "common/error.proto";
+
+service Matchmaking {
+  rpc Init (BattleInitRequest) returns (BattleResponse);
+}
+
+message BattleInitRequest {
+  string battle_id = 1;
+  string profile_id = 2;
+}
