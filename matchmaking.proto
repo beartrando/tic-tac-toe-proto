@@ -2,11 +2,10 @@ syntax = "proto3";
 
 package matchmaking;
 
-import "google/protobuf/timestamp.proto";
-import "common/error.proto";
+import "battle.proto";
 
 service Matchmaking {
-  rpc Init (BattleInitRequest) returns (BattleResponse);
+  rpc Init (BattleInitRequest) returns (battle.BattleResponse);
 }
 
 message BattleInitRequest {
