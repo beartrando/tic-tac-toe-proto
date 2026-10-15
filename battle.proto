@@ -43,13 +43,14 @@ enum BattleStatus {
 
 message BattleObject {
   string                    id = 1;
-  repeated BattleCellValue  board = 2;
-  repeated string           player_ids = 3;
-  BattleStatus              status = 4;
-  string                    winner_id = 5;
-  google.protobuf.Timestamp last_move_at = 6;
-  google.protobuf.Timestamp created_at = 7;
-  google.protobuf.Timestamp updated_at = 8;
+  string                    track_id = 2;
+  repeated BattleCellValue  board = 3;
+  repeated string           player_ids = 4;
+  BattleStatus              status = 5;
+  string                    winner_id = 6;
+  google.protobuf.Timestamp last_move_at = 7;
+  google.protobuf.Timestamp created_at = 8;
+  google.protobuf.Timestamp updated_at = 9;
 }
 
 message BattleResponse {
