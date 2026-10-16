@@ -16,6 +16,7 @@ message BattleRequest {
     BattleLeave      leave = 5;
     BattleJoinBot    connect_bot = 6;
   }
+  string track_id = 7;
 }
 
 message BattleResponse {
@@ -24,6 +25,7 @@ message BattleResponse {
     common.empty.Empty       ping = 2;
     common.error.ErrorObject error = 3;
   }
+  string track_id = 4;
 }
 
 message BattleStart {
@@ -40,6 +42,7 @@ message BattleLeave {
 
 message BattleJoinBot {
   string battle_id = 1;
+  string track_id = 2;
 }
 
 message BattleMove {

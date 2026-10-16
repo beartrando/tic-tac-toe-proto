@@ -42,8 +42,8 @@ enum BattleStatus {
 }
 
 message BattleObject {
+  reserved 2;
   string                    id = 1;
-  string                    track_id = 2;
   repeated BattleCellValue  board = 3;
   repeated string           player_ids = 4;
   BattleStatus              status = 5;
@@ -58,6 +58,17 @@ message BattleResponse {
     BattleObject             battle = 1;
     common.error.ErrorObject error = 2;
   }
+  string track_id = 3;
+}
+
+message TracedBattle {
+  string       track_id = 1;
+  BattleObject battle = 2;
+}
+
+message TracedBattleId {
+  string track_id = 1;
+  string battle_id = 2;
 }
 
 message BattleList {

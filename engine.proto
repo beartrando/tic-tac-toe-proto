@@ -20,6 +20,7 @@ message BattleRequest {
     BattleDisconnect    disconnect = 5;
     common.ping.Ping    ping = 6;
   }
+  string track_id = 7;
 }
 
 message BattleResponse {
@@ -28,6 +29,7 @@ message BattleResponse {
     common.empty.Empty       ping = 2;
     common.error.ErrorObject error = 3;
   }
+  string track_id = 4;
 }
 
 message BattleMove {
